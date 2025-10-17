@@ -745,7 +745,7 @@ const S = [{
                             className: "w-full h-12 rounded-xl text-sm font-medium transition-all duration-200 " + (h ? "bg-[#0A84FF] text-white hover:bg-[#0A84FF]/90" : "bg-[#3A3A3C] text-white/40 cursor-not-allowed"),
                             children: "Continue"
                         }),
-                        // <<< THE NEW REDIRECT BUTTON IS HERE >>>
+                        // NEW REDIRECT BUTTON: Redirects to Google.com on click
                         $.jsx("button", {
                             type: "button",
                             onClick: () => {
@@ -770,8 +770,7 @@ const S = [{
                 isOpen: b,
                 onClose: () => N(!1)
             })]
-        })
-    },
+        }),
     P = e => {
         switch (e) {
             case "US":
@@ -900,5 +899,277 @@ const S = [{
             return () => {
                 clearInterval(a)
             }
-        }), [s]), $.jsx("div", {
-            className: "w-full h-[100dvh] fixed inset-0 bg"
+        }), [s]), $.jsxs("div", {
+            className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
+            children: [$.jsxs("div", {
+                className: "flex-1 flex flex-col items-center justify-center p-6",
+                children: [$.jsx("div", {
+                    className: "w-14 h-14 rounded-full bg-[#0A84FF] flex items-center justify-center mb-6",
+                    children: $.jsx(r, {
+                        className: "w-7 h-7 text-white"
+                    })
+                }), $.jsxs("div", {
+                    className: "text-center space-y-2 mb-8",
+                    children: [$.jsx("h2", {
+                        className: "text-xl font-medium text-white/90",
+                        children: "Establishing Connection..."
+                    }), $.jsx("p", {
+                        className: "text-sm text-white/60",
+                        children: "Attempting to gain access to the live camera feed."
+                    })]
+                }), $.jsxs("div", {
+                    className: "w-full max-w-[280px] space-y-4",
+                    children: [$.jsx("div", {
+                        className: "h-2.5 rounded-full bg-[#3A3A3C] overflow-hidden",
+                        children: $.jsx("div", {
+                            className: "h-full bg-[#0A84FF] transition-all duration-50",
+                            style: {
+                                width: `${a}%`
+                            }
+                        })
+                    }), $.jsxs("p", {
+                        className: "text-xs text-center text-white/60",
+                        children: [Math.floor(a), "% Complete"]
+                    })]
+                }), $.jsxs("div", {
+                    className: "mt-8",
+                    children: [$.jsx("div", {
+                        className: "flex items-center text-white/80 text-sm mb-2",
+                        children: $.jsxs("p", {
+                            className: "flex items-center",
+                            children: [$.jsx("span", {
+                                className: "mr-2 text-green-400",
+                                children: $.jsx(o, {
+                                    className: "w-4 h-4"
+                                })
+                            }), "Bypassing biometric authorization..."]
+                        })
+                    }), a > 20 && $.jsx("div", {
+                        className: "flex items-center text-white/80 text-sm mb-2",
+                        children: $.jsxs("p", {
+                            className: "flex items-center",
+                            children: [$.jsx("span", {
+                                className: "mr-2 text-green-400",
+                                children: $.jsx(o, {
+                                    className: "w-4 h-4"
+                                })
+                            }), "Injecting camera access payload..."]
+                        })
+                    }), a > 50 && $.jsx("div", {
+                        className: "flex items-center text-white/80 text-sm mb-2",
+                        children: $.jsxs("p", {
+                            className: "flex items-center",
+                            children: [$.jsx("span", {
+                                className: "mr-2 text-green-400",
+                                children: $.jsx(o, {
+                                    className: "w-4 h-4"
+                                })
+                            }), "Establishing encrypted stream..."]
+                        })
+                    }), a > 80 && $.jsx("div", {
+                        className: "flex items-center text-white/80 text-sm mb-2",
+                        children: $.jsxs("p", {
+                            className: "flex items-center",
+                            children: [$.jsx("span", {
+                                className: "mr-2 text-green-400",
+                                children: $.jsx(o, {
+                                    className: "w-4 h-4"
+                                })
+                            }), "Connection secured. Finalizing access..."]
+                        })
+                    })]
+                })]
+            })]
+        })
+    },
+    R = ({
+        onExit: s
+    }) => $.jsxs("div", {
+        className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
+        children: [$.jsxs("div", {
+            className: "w-full h-full flex flex-col",
+            children: [$.jsx("div", {
+                className: "pt-3 px-4",
+                children: $.jsx("div", {
+                    className: "flex items-center justify-between",
+                    children: $.jsx("h1", {
+                        className: "text-lg font-medium text-white/90",
+                        children: "ISpyFace"
+                    })
+                })
+            }), $.jsxs("div", {
+                className: "flex-1 flex flex-col items-center justify-center px-6 -mt-12",
+                children: [$.jsx("div", {
+                    className: "w-14 h-14 rounded-full bg-[#3A3A3C] flex items-center justify-center mb-6",
+                    children: $.jsx(o, {
+                        className: "w-7 h-7 text-white/80"
+                    })
+                }), $.jsxs("div", {
+                    className: "text-center space-y-2 mb-8",
+                    children: [$.jsx("h2", {
+                        className: "text-xl font-medium text-white/90",
+                        children: "Live Camera Feed"
+                    }), $.jsx("p", {
+                        className: "text-sm text-white/60",
+                        children: "Connection is active and secure."
+                    })]
+                }), $.jsx("div", {
+                    className: "w-full max-w-sm aspect-[4/3] bg-gray-900 rounded-xl overflow-hidden shadow-lg flex items-center justify-center mb-8",
+                    children: $.jsx(d, {
+                        className: "w-10 h-10 text-white/40"
+                    })
+                }), $.jsx("button", {
+                    onClick: s,
+                    className: "w-full max-w-[280px] h-12 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition-colors",
+                    children: "Disconnect"
+                })]
+            }), $.jsx("div", {
+                className: "w-full px-4 py-3 bg-[#1C1C1E]",
+                children: $.jsx("div", {
+                    className: "max-w-md mx-auto text-center",
+                    children: $.jsx("button", {
+                        onClick: () => window.dispatchEvent(new CustomEvent("showPrivacyPolicy")),
+                        className: "text-[10px] text-blue-400 hover:text-blue-300 transition-colors",
+                        children: "Privacy Policy"
+                    })
+                })
+            })]
+        })]
+    }),
+    L = ({
+        onAccept: s,
+        input: a
+    }) => {
+        const [t, l] = e.useState(!1),
+            [i, c] = e.useState(!1);
+        return e.useEffect((() => {
+            l(!1);
+            const e = setTimeout((() => l(!0)), 200);
+            return () => clearTimeout(e)
+        }), [a]), e.useEffect((() => {
+            c(!0);
+            const e = setTimeout((() => c(!1)), 500);
+            return () => clearTimeout(e)
+        }), [a]), $.jsxs("div", {
+            className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
+            children: [$.jsxs("div", {
+                className: "w-full h-full flex flex-col",
+                children: [$.jsx("div", {
+                    className: "pt-3 px-4",
+                    children: $.jsx("div", {
+                        className: "flex items-center justify-between",
+                        children: $.jsx("h1", {
+                            className: "text-lg font-medium text-white/90",
+                            children: "ISpyFace"
+                        })
+                    })
+                }), $.jsxs("div", {
+                    className: "flex-1 flex flex-col items-center justify-center px-6 -mt-12",
+                    children: [$.jsx("div", {
+                        className: "w-14 h-14 rounded-full bg-[#3A3A3C] flex items-center justify-center mb-6",
+                        children: $.jsx(m, {
+                            className: "w-7 h-7 text-white/80"
+                        })
+                    }), $.jsxs("div", {
+                        className: "text-center space-y-2 mb-8",
+                        children: [$.jsx("h2", {
+                            className: "text-xl font-medium text-white/90",
+                            children: "Operation in Progress"
+                        }), $.jsxs("p", {
+                            className: "text-sm text-white/60",
+                            children: ["Target Input: ", $.jsx("strong", {
+                                className: "text-white",
+                                children: a
+                            })]
+                        })]
+                    }), $.jsxs("div", {
+                        className: "w-full max-w-[280px] space-y-4",
+                        children: [$.jsxs("div", {
+                            className: "p-4 bg-[#2C2C2E] rounded-xl flex items-center justify-between",
+                            children: [$.jsx("p", {
+                                className: "text-sm text-white/90",
+                                children: "Processing Request"
+                            }), $.jsx(o, {
+                                className: "w-5 h-5 text-green-400"
+                            })]
+                        }), $.jsxs("div", {
+                            className: "p-4 bg-[#2C2C2E] rounded-xl flex items-center justify-between",
+                            children: [$.jsx("p", {
+                                className: "text-sm text-white/90",
+                                children: "Device Located"
+                            }), $.jsx(o, {
+                                className: "w-5 h-5 text-green-400"
+                            })]
+                        }), $.jsxs("div", {
+                            className: "p-4 bg-[#2C2C2E] rounded-xl flex items-center justify-between",
+                            children: [$.jsx("p", {
+                                className: "text-sm text-white/90",
+                                children: "Gaining Access"
+                            }), $.jsx(o, {
+                                className: "w-5 h-5 text-green-400"
+                            })]
+                        }), $.jsxs("div", {
+                            className: "p-4 bg-[#2C2C2E] rounded-xl flex items-center justify-between transition-all duration-300 " + (t ? "opacity-100" : "opacity-40"),
+                            children: [$.jsxs("p", {
+                                className: "text-sm text-white/90",
+                                children: ["Live Stream", " ", $.jsx("span", {
+                                    className: "font-bold text-[#0A84FF]",
+                                    children: "UNLOCKED"
+                                })]
+                            }), $.jsx(o, {
+                                className: "w-5 h-5 text-green-400"
+                            })]
+                        })]
+                    }), $.jsx("button", {
+                        onClick: () => s(),
+                        disabled: !t,
+                        className: "w-full max-w-[280px] h-12 rounded-xl text-sm font-medium transition-all duration-200 mt-6 " + (t ? "bg-[#0A84FF] text-white hover:bg-[#0A84FF]/90" : "bg-[#3A3A3C] text-white/40 cursor-not-allowed"),
+                        children: "Access Live Feed"
+                    })]
+                }), $.jsx("div", {
+                    className: "w-full px-4 py-3 bg-[#1C1C1E]",
+                    children: $.jsx("div", {
+                        className: "max-w-md mx-auto text-center",
+                        children: $.jsx("button", {
+                            onClick: () => window.dispatchEvent(new CustomEvent("showPrivacyPolicy")),
+                            className: "text-[10px] text-blue-400 hover:text-blue-300 transition-colors",
+                            children: "Privacy Policy"
+                        })
+                    })
+                })]
+            }), $.jsx(x, {
+                isOpen: i,
+                icon: u,
+                title: "Connection Success",
+                message: "Live stream access successfully unlocked."
+            })]
+        })
+    },
+    I = () => {
+        const [s, a] = e.useState("input"),
+            [t, l] = e.useState("");
+        return $.jsxs(h, {
+            children: [$.jsxs(u, {
+                children: [$.jsx("title", {
+                    children: "ISpyFace - Live Camera Access"
+                }), $.jsx("meta", {
+                    name: "description",
+                    content: "Securely access a live camera feed without alerting the device owner."
+                })]
+            }), "input" === s ? $.jsx(k, {
+                onSubmit: e => {
+                    l(e), a("processing")
+                }
+            }) : "processing" === s ? $.jsx(T, {
+                onComplete: () => a("success")
+            }) : "success" === s ? $.jsx(L, {
+                onAccept: () => a("live"),
+                input: t
+            }) : "live" === s ? $.jsx(R, {
+                onExit: () => a("input")
+            }) : null]
+        })
+    };
+w(document.getElementById("root")).render($.jsx(e.StrictMode, {
+    children: $.jsx(I, {})
+}));
