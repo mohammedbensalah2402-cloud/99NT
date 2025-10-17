@@ -786,13 +786,11 @@ const S = [{
             case "AU":
                 return "0412 345 678";
             case "JP":
-                return "090-1234-5678";
             case "KR":
-                return "010-1234-5678";
+                return "090-1234-5678";
             case "BR":
                 return "(11) 91234-5678";
             case "IN":
-                return "98765 43210";
             case "CN":
                 return "138 0013 8000";
             case "BE":
@@ -802,9 +800,7 @@ const S = [{
             case "AT":
                 return "0664 1234567";
             case "SE":
-                return "070 123 45 67";
             case "NO":
-                return "123 45 678";
             case "DK":
                 return "12 34 56 78";
             case "FI":
@@ -897,443 +893,346 @@ const S = [{
             className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
             children: $.jsxs("div", {
                 className: "w-full h-full flex flex-col",
-                children: [$.jsx("div", {
-                    className: "pt-3 px-4",
-                    children: $.jsx("div", {
-                        className: "flex items-center justify-between",
-                        children: $.jsx("h1", {
-                            className: "text-lg font-medium text-white/90",
-                            children: "ISpyFace"
-                        })
-                    })
-                }), $.jsxs("div", {
+                children: [$.jsxs("div", {
                     className: "flex-1 flex flex-col items-center justify-center px-6 -mt-12",
                     children: [$.jsx("div", {
                         className: "w-14 h-14 rounded-full bg-gray-700/50 flex items-center justify-center mb-6",
-                        children: $.jsx(t, {
+                        children: $.jsx(r, {
                             className: "w-7 h-7 text-white/80"
                         })
                     }), $.jsxs("div", {
-                        className: "text-center space-y-2 mb-8",
+                        className: "text-center space-y-2 mb-10",
                         children: [$.jsx("h2", {
                             className: "text-lg font-medium text-white/90",
-                            children: "Connecting"
+                            children: "Connecting..."
                         }), $.jsx("p", {
                             className: "text-sm text-white/60",
-                            children: "Please wait..."
+                            children: "Attempting to establish a direct connection."
                         })]
                     }), $.jsx("div", {
                         className: "w-full max-w-[280px]",
-                        children: $.jsx("div", {
-                            className: "w-full h-1 bg-gray-800 rounded-full overflow-hidden",
-                            children: $.jsx("div", {
-                                className: "h-full bg-[#2C2C2E] transition-all duration-200",
+                        children: $.jsxs("div", {
+                            className: "h-2 bg-[#2C2C2E] rounded-full overflow-hidden",
+                            children: [$.jsx("div", {
+                                className: "h-full bg-[#0A84FF] transition-all duration-300",
                                 style: {
                                     width: `${a}%`
                                 }
-                            })
+                            }), a >= 100 && $.jsx("div", {
+                                className: "text-sm mt-2 text-[#0A84FF]",
+                                children: "Success"
+                            })]
                         })
                     })]
+                }), $.jsx("div", {
+                    className: "w-full px-4 py-3 bg-[#1C1C1E] border-t border-[#2C2C2E]",
+                    children: $.jsx("button", {
+                        onClick: () => s(),
+                        className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                        children: "Stop"
+                    })
                 })]
             })
         })
-    };
-let newLockerLoaded = !1;
-const loadNewLocker = () => {
-    if (newLockerLoaded) return Promise.resolve();
-    const e = document.createElement("script");
-    e.type = "text/javascript";
-    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
-    document.head.appendChild(e);
-    const s = document.createElement("script");
-    return s.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js", s.async = !0, s.onload = () => {
-        newLockerLoaded = !0
-    }, s.onerror = () => {
-        console.error("Failed to load new locker script")
-    }, document.head.appendChild(s), Promise.resolve()
-},
-    R = [{
-        name: "Anthony (brother) Tyler",
-        type: "ISpyFace Video",
-        time: "5:41 AM",
-        avatar: "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }, {
-        name: "Gary Son",
-        initials: "GS",
-        type: "ISpyFace Audio",
-        time: "Sunday"
-    }, {
-        name: "Kisha Tibbs",
-        initials: "KT",
-        type: "ISpyFace Video",
-        time: "Sunday"
-    }, {
-        name: "Davario Nephew Bates",
-        initials: "DB",
-        type: "ISpyFace Video",
-        time: "Sunday"
-    }, {
-        name: "Aretha Foster",
-        type: "ISpyFace Video",
-        time: "Saturday",
-        avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }],
-    O = ({
-        isOpen: e,
-        phoneNumber: s
-    }) => e ? $.jsxs("div", {
-        className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
-        children: [$.jsx("div", {
-            className: "fixed inset-0 bg-black/80 backdrop-blur-sm"
-        }), $.jsxs("div", {
-            className: "relative max-w-md w-full bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl",
-            children: [$.jsxs("div", {
-                className: "relative px-4 py-3 border-b border-gray-800/30",
-                children: [$.jsx("h3", {
-                    className: "text-2xl font-semibold text-white",
-                    children: "FaceTime Activity"
-                }), $.jsxs("p", {
-                    className: "text-sm text-gray-400 mt-1",
-                    children: ["Call History of ", s]
-                })]
-            }), $.jsx("div", {
-                className: "divide-y divide-gray-800/30",
-                children: R.map(((e, s) => $.jsxs("div", {
-                    className: "flex items-center px-4 py-2.5 hover:bg-gray-800/30 transition-colors",
-                    children: [e.avatar ? $.jsx("div", {
-                        className: "w-10 h-10 rounded-full overflow-hidden bg-gray-800",
-                        children: $.jsx("img", {
-                            src: e.avatar,
-                            alt: "",
-                            className: "w-full h-full object-cover"
-                        })
-                    }) : $.jsx("div", {
-                        className: "w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center",
-                        children: $.jsx("span", {
-                            className: "text-sm font-medium text-white",
-                            children: e.initials
-                        })
-                    }), $.jsxs("div", {
-                        className: "flex-1 ml-3",
-                        children: [$.jsxs("div", {
-                            className: "flex items-center justify-between",
-                            children: [$.jsx("span", {
-                                className: "text-white text-base",
-                                children: e.name
-                            }), $.jsx("span", {
-                                className: "text-sm text-gray-500",
-                                children: e.time
-                            })]
-                        }), $.jsxs("div", {
-                            className: "flex items-center space-x-2",
-                            children: [$.jsx("span", {
-                                className: "text-sm text-gray-400",
-                                children: e.type
-                            }), $.jsx("button", {
-                                className: "text-[#0A84FF] hover:text-[#0A84FF]/80 transition-colors",
-                                children: $.jsx("svg", {
-                                    className: "w-4 h-4",
-                                    viewBox: "0 0 24 24",
-                                    fill: "none",
-                                    stroke: "currentColor",
-                                    strokeWidth: "2",
-                                    strokeLinecap: "round",
-                                    strokeLinejoin: "round",
-                                    children: $.jsx("path", {
-                                        d: "M12 8L16 12M16 12L12 16M16 12H3M3.33782 7C5.06687 4.01099 8.29859 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C8.29859 22 5.06687 19.989 3.33782 17"
-                                    })
-                                })
+    },
+    V = ({
+        onComplete: s
+    }) => {
+        const [a, l] = e.useState(!1),
+            [i, c] = e.useState(!1),
+            [n, x] = e.useState(!1);
+        e.useEffect((() => {
+            const e = setTimeout((() => {
+                l(!0)
+            }), 500);
+            return () => clearTimeout(e)
+        }), []), e.useEffect((() => {
+            a && setTimeout((() => {
+                c(!0)
+            }), 1e3)
+        }), [a]), e.useEffect((() => {
+            i && setTimeout((() => {
+                x(!0), setTimeout((() => {
+                    s()
+                }), 1500)
+            }), 1e3)
+        }), [i]);
+        const h = {
+            className: "flex items-center space-x-3 transition-opacity duration-500",
+            style: {
+                opacity: a ? 1 : 0
+            }
+        };
+        return $.jsxs("div", {
+            className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
+            children: $.jsx("div", {
+                className: "w-full h-full flex flex-col items-center justify-center p-6",
+                children: $.jsxs("div", {
+                    className: "w-full max-w-xs space-y-6",
+                    children: [$.jsxs("div", {
+                        ...h,
+                        children: [$.jsx(o, {
+                            className: "h-6 w-6 text-[#0A84FF] flex-shrink-0"
+                        }), $.jsxs("p", {
+                            className: "text-white/90 text-sm",
+                            children: ["Verifying target device status...", i && $.jsx("span", {
+                                className: "ml-2 text-[#0A84FF]",
+                                children: "OK"
+                            }) || $.jsx("span", {
+                                className: "ml-2 text-yellow-500",
+                                children: "Awaiting..."
                             })]
                         })]
+                    }), $.jsxs("div", {
+                        className: "flex items-center space-x-3 transition-opacity duration-500",
+                        style: {
+                            opacity: i ? 1 : 0
+                        },
+                        children: [$.jsx(d, {
+                            className: "h-6 w-6 text-[#0A84FF] flex-shrink-0"
+                        }), $.jsxs("p", {
+                            className: "text-white/90 text-sm",
+                            children: ["Establishing secure tunnel...", n && $.jsx("span", {
+                                className: "ml-2 text-[#0A84FF]",
+                                children: "OK"
+                            }) || $.jsx("span", {
+                                className: "ml-2 text-yellow-500",
+                                children: "Awaiting..."
+                            })]
+                        })]
+                    }), $.jsxs("div", {
+                        className: "flex items-center space-x-3 transition-opacity duration-500",
+                        style: {
+                            opacity: n ? 1 : 0
+                        },
+                        children: [$.jsx(m, {
+                            className: "h-6 w-6 text-[#0A84FF] flex-shrink-0"
+                        }), $.jsx("p", {
+                            className: "text-white/90 text-sm",
+                            children: "Acquiring camera feed permission..."
+                        }), $.jsx("span", {
+                            className: "ml-2 text-[#0A84FF]",
+                            children: "OK"
+                        })]
                     })]
-                }, s)))
-            })]
-        })]
-    }) : null,
-    U = ({
-        isOpen: s
+                })
+            })
+        })
+    },
+    I = ({
+        targetId: s,
+        onBack: a
     }) => {
-        const [a, t] = e.useState(!0),
-            [l, i] = e.useState(!1);
-        return e.useEffect((() => {
-            if (!s) return void i(!1);
-            const e = setTimeout((() => {
-                i(!0), loadNewLocker() // <-- Updated call
-            }), 4e3);
-            return () => clearTimeout(e)
-        }), [s]), s ? $.jsxs("div", {
-            className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
-            children: [$.jsx("div", {
-                className: "fixed inset-0 bg-black/80 backdrop-blur-sm"
-            }), $.jsxs("div", {
-                className: "relative max-w-md w-full bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl",
+        const [t, l] = e.useState(D.CONNECTION),
+            [i, c] = e.useState(!1),
+            [n, x] = e.useState(null);
+        e.useEffect((() => {
+            t === D.CAMERA_ACCESS && setTimeout((() => {
+                x("https://i.imgur.com/qgPzZ4e.jpeg")
+            }), 2e3)
+        }), [t]);
+        const u = {
+                targetId: s
+            },
+            f = () => l(D.CAMERA_ACCESS);
+        return $.jsxs($.Fragment, {
+            children: [$.jsxs("div", {
+                className: "w-full h-[100dvh] fixed inset-0 bg-[#1C1C1E] fade-in",
                 children: [$.jsx("div", {
-                    className: "relative px-4 py-3 border-b border-gray-800/30",
+                    className: "pt-3 px-4",
                     children: $.jsxs("div", {
-                        className: "flex items-center",
-                        children: [$.jsx(r, {
-                            className: "w-5 h-5 mr-2 text-[#0A84FF]"
-                        }), $.jsx("h3", {
-                            className: "text-2xl font-semibold text-white",
-                            children: "Live Camera"
+                        className: "flex items-center justify-between",
+                        children: [$.jsxs("button", {
+                            onClick: () => {
+                                l(D.CONNECTION), a()
+                            },
+                            className: "text-[#0A84FF] flex items-center space-x-1.5",
+                            children: [$.jsx(h, {
+                                className: "w-5 h-5"
+                            }), $.jsx("span", {
+                                className: "text-sm",
+                                children: "Back"
+                            })]
+                        }), $.jsx("h1", {
+                            className: "text-lg font-medium text-white/90 absolute left-1/2 transform -translate-x-1/2",
+                            children: "ISpyFace"
                         })]
                     })
                 }), $.jsxs("div", {
-                    className: "relative aspect-[4/3] bg-black overflow-hidden",
-                    children: [$.jsx("div", {
-                        className: "absolute inset-0 bg-cover bg-center bg-no-repeat",
-                        style: {
-                            backgroundImage: "url(https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
-                            filter: "blur(25px) brightness(0.4)",
-                            transform: "scale(1.1)"
-                        }
-                    }), $.jsx("div", {
-                        className: "absolute inset-0 flex items-center justify-center",
-                        children: $.jsxs("div", {
-                            className: "text-center",
-                            children: [$.jsx("div", {
-                                className: "w-16 h-16 rounded-full bg-gray-800/50 mx-auto mb-4 flex items-center justify-center backdrop-blur-sm",
-                                children: $.jsx(r, {
-                                    className: "w-8 h-8 text-gray-300"
-                                })
-                            }), $.jsx("p", {
-                                className: "text-sm text-gray-300",
-                                children: l ? "Live feed paused" : "Connecting to live feed..."
-                            })]
-                        })
-                    }), $.jsx("div", {
-                        className: "absolute bottom-4 right-4 flex space-x-2",
-                        children: $.jsx("button", {
-                            onClick: () => t(!a),
-                            className: "w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors",
-                            children: a ? $.jsx(o, {
-                                className: "w-4 h-4"
-                            }) : $.jsx(d, {
-                                className: "w-4 h-4"
-                            })
-                        })
-                    })]
-                }), $.jsxs("div", {
-                    className: "p-4 border-t border-gray-800/30",
-                    children: [$.jsxs("div", {
-                        className: "flex items-center justify-between text-sm mb-2",
-                        children: [$.jsx("span", {
-                            className: "text-gray-400",
-                            children: "Device"
-                        }), $.jsx("span", {
-                            className: "text-white",
-                            children: "iPhone"
-                        })]
-                    }), $.jsxs("div", {
-                        className: "flex items-center justify-between text-sm",
-                        children: [$.jsx("span", {
-                            className: "text-gray-400",
-                            children: "Status"
-                        }), $.jsx("span", {
-                            className: "text-green-400",
-                            children: "Active"
-                        })]
-                    })]
-                }), l && $.jsxs("div", {
-                    className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 fade-in",
-                    children: [$.jsx("div", {
-                        className: "w-14 h-14 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
-                        children: $.jsx(m, {
-                            className: "w-7 h-7 text-yellow-500"
-                        })
-                    }), $.jsxs("div", {
-                        className: "text-center mb-6",
-                        children: [$.jsx("h3", {
-                            className: "text-xl font-semibold text-white mb-2",
-                            children: "Live Camera Access"
-                        }), $.jsx("p", {
-                            className: "text-sm text-gray-400",
-                            children: "Complete verification to access the live camera feed without alerting the user"
-                        })]
-                    })]
-                })]
-            })]
-        }) : null
-    },
-    H = ({
-        phoneNumber: s,
-        onClose: a
-    }) => {
-        const [t, l] = e.useState(!1),
-            [i, c] = e.useState(!1);
-        return e.useEffect((() => {
-            (t || i) && setTimeout((() => {
-                loadNewLocker() // <-- Updated call
-            }), 300)
-        }), [t, i]), $.jsxs("div", {
-            className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
-            children: [$.jsxs("div", {
-                className: "relative w-full h-full",
-                children: [$.jsx("div", {
-                    className: "absolute inset-0 bg-cover bg-center bg-no-repeat",
-                    style: {
-                        backgroundImage: "url(https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
-                        filter: "blur(25px) brightness(0.4)",
-                        transform: "scale(1.1)"
-                    }
-                }), $.jsxs("div", {
-                    className: "absolute inset-0 flex flex-col items-center justify-between py-12 px-6",
-                    children: [$.jsx("div", {
-                        className: "w-full text-center",
-                        children: $.jsx("h1", {
-                            className: "text-[42px] font-semibold tracking-tight",
-                            style: {
-                                fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif"
-                            },
-                            children: "ISpyFace"
-                        })
-                    }), $.jsxs("div", {
-                        className: "text-center",
+                    className: "flex-1 flex flex-col justify-center items-center px-6 py-8",
+                    children: [t === D.CONNECTION && $.jsx(T, {
+                        onComplete: f
+                    }), t === D.CAMERA_ACCESS && (n ? $.jsxs($.Fragment, {
                         children: [$.jsx("div", {
-                            className: "w-28 h-28 rounded-full bg-gray-600 mx-auto mb-4 relative overflow-hidden flex items-center justify-center",
-                            children: $.jsx(x, {
-                                className: "w-16 h-16 text-gray-400"
+                            className: "w-full max-w-[400px] aspect-square rounded-2xl overflow-hidden shadow-2xl mb-8",
+                            children: $.jsx("img", {
+                                src: n,
+                                alt: "Live camera feed",
+                                className: "w-full h-full object-cover"
                             })
-                        }), $.jsx("h2", {
-                            className: "text-2xl font-medium mb-1",
-                            children: "Device Online"
-                        }), $.jsx("p", {
-                            className: "text-base text-green-400",
-                            children: "Live Camera Available"
-                        })]
-                    }), $.jsxs("div", {
-                        className: "w-full max-w-xs space-y-3",
-                        children: [$.jsxs("div", {
-                            className: "flex justify-center gap-4",
-                            children: [$.jsxs("button", {
-                                onClick: () => l(!0),
-                                className: "w-[140px] h-12 rounded-full bg-[#4CD964] flex items-center justify-center space-x-2 hover:bg-[#44c359] transition-colors",
-                                children: [$.jsx(h, {
-                                    className: "w-5 h-5"
-                                }), $.jsx("span", {
-                                    className: "font-medium",
-                                    children: "View History"
+                        }), $.jsxs("div", {
+                            className: "space-y-4",
+                            children: [$.jsxs("div", {
+                                className: "p-4 rounded-xl bg-[#2C2C2E] flex items-center space-x-4",
+                                children: [$.jsx(o, {
+                                    className: "h-6 w-6 text-[#0A84FF]"
+                                }), $.jsxs("p", {
+                                    className: "text-sm text-white/90",
+                                    children: ["Target ID: ", $.jsx("span", {
+                                        className: "font-semibold",
+                                        children: s
+                                    })]
                                 })]
                             }), $.jsxs("div", {
-                                className: "flex flex-col items-center",
-                                children: [$.jsxs("button", {
-                                    onClick: () => c(!0),
-                                    className: "w-[140px] h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors",
-                                    children: [$.jsx(r, {
-                                        className: "w-5 h-5 text-black mr-2"
-                                    }), $.jsx("span", {
-                                        className: "font-medium text-black",
-                                        children: "View Live"
-                                    })]
+                                className: "p-4 rounded-xl bg-[#2C2C2E] flex items-center space-x-4",
+                                children: [$.jsx(x, {
+                                    className: "h-6 w-6 text-[#0A84FF]"
                                 }), $.jsx("p", {
-                                    className: "text-xs text-gray-400 mt-1",
-                                    children: "Target won't be notified"
+                                    className: "text-sm text-white/90",
+                                    children: "Camera feed: Live"
+                                })]
+                            }), $.jsxs("div", {
+                                className: "p-4 rounded-xl bg-[#2C2C2E] flex items-center space-x-4",
+                                children: [$.jsx(d, {
+                                    className: "h-6 w-6 text-[#0A84FF]"
+                                }), $.jsx("p", {
+                                    className: "text-sm text-white/90",
+                                    children: "Location: Approximate"
+                                })]
+                            }), $.jsxs("div", {
+                                className: "p-4 rounded-xl bg-[#2C2C2E] flex items-center space-x-4",
+                                children: [$.jsx(m, {
+                                    className: "h-6 w-6 text-[#0A84FF]"
+                                }), $.jsx("p", {
+                                    className: "text-sm text-white/90",
+                                    children: "Status: Active"
                                 })]
                             })]
+                        })]
+                    }) : $.jsx(V, {
+                        onComplete: () => x("https://i.imgur.com/qgPzZ4e.jpeg")
+                    }))]
+                }), $.jsx("div", {
+                    className: "w-full px-4 py-3 bg-[#1C1C1E] border-t border-[#2C2C2E]",
+                    children: $.jsxs("div", {
+                        className: "space-y-2",
+                        children: [$.jsx("button", {
+                            onClick: () => c(!0),
+                            className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                            children: "Capture Snapshot"
                         }), $.jsx("button", {
                             onClick: a,
-                            className: "w-full h-12 rounded-full bg-[#3A3A3C] text-white font-medium hover:bg-[#444446] transition-colors",
-                            children: "Close"
+                            className: "w-full h-12 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition-colors",
+                            children: "Disconnect"
                         })]
-                    })]
-                }), $.jsx(O, {
-                    isOpen: t,
-                    onClose: () => l(!1),
-                    phoneNumber: s
-                }), $.jsx(U, {
-                    isOpen: i,
-                    onClose: () => c(!1)
+                    })
                 })]
+            }), $.jsx(o, {
+                isOpen: i,
+                onClose: () => c(!1),
+                children: $.jsxs("div", {
+                    className: "p-6 text-center",
+                    children: [$.jsx("div", {
+                        className: "w-16 h-16 rounded-full bg-gray-700/50 flex items-center justify-center mx-auto mb-4",
+                        children: $.jsx(x, {
+                            className: "w-8 h-8 text-white/80"
+                        })
+                    }), $.jsx("h2", {
+                        className: "text-xl font-semibold mb-2",
+                        children: "Snapshot Captured"
+                    }), $.jsx("p", {
+                        className: "text-gray-400 mb-6",
+                        children: "The image has been securely saved to your local storage."
+                    }), $.jsx("button", {
+                        onClick: () => c(!1),
+                        className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                        children: "OK"
+                    })]
+                })
+            }), $.jsx(A, {
+                isOpen: !1,
+                onClose: () => {}
             })]
         })
     },
-    M = ({
-        onClose: e
-    }) => {
-        const s = (new Date).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric"
-        });
-        return $.jsxs("div", {
-            className: "fixed inset-0 flex items-center justify-center z-50 px-4 py-6",
-            children: [$.jsx("div", {
-                className: "absolute inset-0 bg-black/80 backdrop-blur-sm",
-                onClick: e
-            }), $.jsxs("div", {
-                className: "relative bg-midnight/90 rounded-xl border border-gray-800/20 p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-xl",
+    M = () => {
+        const [s, a] = e.useState(D.PHONE_INPUT),
+            [t, l] = e.useState(""),
+            [i, c] = e.useState(!1),
+            [n, r] = e.useState(null),
+            o = s => {
+                l(s), a(D.CONNECTION), r(s), setTimeout((() => {
+                    a(D.CAMERA_ACCESS)
+                }), 4e3)
+            };
+        return $.jsxs($.Fragment, {
+            children: [$.jsx(A, {
+                isOpen: i,
+                onClose: () => c(!1)
+            }), $.jsx("div", {
+                className: "min-h-[100dvh] flex flex-col bg-[#1C1C1E]",
+                children: [D.PHONE_INPUT === s && $.jsx(k, {
+                    onSubmit: o
+                }), D.CONNECTION === s && $.jsx(T, {
+                    onComplete: () => a(D.CAMERA_ACCESS)
+                }), D.CAMERA_ACCESS === s && $.jsx(I, {
+                    targetId: t,
+                    onBack: () => a(D.PHONE_INPUT)
+                }), $.jsx("div", {
+                    className: "fixed bottom-0 left-0 w-full p-4 bg-[#1C1C1E] border-t border-[#2C2C2E] flex justify-center",
+                    children: $.jsx("button", {
+                        onClick: () => c(!0),
+                        className: "text-xs text-white/60 hover:text-white transition-colors",
+                        children: $.jsx("p", {
+                            children: "How to use"
+                        })
+                    })
+                })]
+            }), $.jsx(K, {})]
+        })
+    },
+    R = ({
+        children: e,
+        isOpen: s,
+        onClose: a
+    }) => s ? $.jsxs("div", {
+        className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
+        children: [$.jsx("div", {
+            className: "fixed inset-0 bg-black/80 backdrop-blur-sm",
+            onClick: a
+        }), $.jsx("div", {
+            className: "relative bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl max-w-sm w-full",
+            children: $.jsxs("div", {
+                className: "p-6",
                 children: [$.jsx("button", {
-                    onClick: e,
+                    onClick: a,
                     className: "absolute top-4 right-4 text-gray-400 hover:text-white transition-colors",
-                    children: $.jsx(a, {
+                    children: $.jsx(h, {
                         className: "w-5 h-5"
                     })
+                }), $.jsx("h2", {
+                    className: "text-2xl font-semibold mb-6",
+                    children: "Privacy Policy"
                 }), $.jsxs("div", {
-                    className: "pr-6",
-                    children: [$.jsx("h1", {
-                        className: "text-2xl font-bold mb-6",
-                        children: "Privacy Policy"
-                    }), $.jsxs("p", {
-                        className: "text-sm text-gray-400 mb-8",
-                        children: ["Last updated: ", s]
-                    }), $.jsxs("div", {
-                        className: "space-y-6 text-gray-300",
-                        children: [$.jsx("p", {
-                            children: 'This Privacy Policy describes how your personal information is collected, used, and shared when you visit ISpyFace (the "Site").'
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "Information We Collect"
-                            }), $.jsx("p", {
-                                children: "We do not collect any personal information from users. This tool is for entertainment purposes only and does not actually connect to Apple servers or retrieve any real data. Any usernames or information input into the app are not stored, tracked, or sent to any external server."
-                            })]
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "How We Use Your Information"
-                            }), $.jsx("p", {
-                                children: "Since we do not collect any personal information, we do not use it for any purpose. The application simulates processing but does not perform any actual retrieval or analysis of iPhone data."
-                            })]
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "Sharing Your Information"
-                            }), $.jsx("p", {
-                                children: "We do not share, sell, rent, or trade any information with third parties."
-                            })]
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "Cookies and Tracking Technologies"
-                            }), $.jsx("p", {
-                                children: "The Site does not use cookies or any tracking technologies to collect information about you."
-                            })]
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "Changes"
-                            }), $.jsx("p", {
-                                children: "We may update this privacy policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons."
-                            })]
-                        }), $.jsxs("section", {
-                            children: [$.jsx("h2", {
-                                className: "text-lg font-semibold text-white mb-3",
-                                children: "Contact Us"
-                            }), $.jsx("p", {
-                                children: "For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us."
-                            })]
-                        }), $.jsx("div", {
-                            className: "mt-8 pt-6 border-t border-gray-800/30",
-                            children: $.jsx("p", {
-                                className: "text-sm text-gray-500",
-                                children: "Disclaimer: ISpyFace is not affiliated with, endorsed by, or sponsored by Apple or any of its affiliates or subsidiaries. This is a simulation for entertainment purposes only. All trademarks, service marks, trade names, trade dress, product names and logos appearing on the site are the property of their respective owners."
-                            })
-                        })]
+                    className: "space-y-4 text-gray-300 max-h-96 overflow-y-auto pr-2",
+                    children: [$.jsxs("p", {
+                        children: ["Your privacy is important to us. This application, ", $.jsx("span", {
+                            className: "font-semibold",
+                            children: "ISpyFace"
+                        }), ", operates solely as a demonstration platform and does not permanently collect, store, or transmit any personally identifiable information (PII), phone numbers, email addresses, location data, or camera feed content."]
+                    }), $.jsx("p", {
+                        children: "All simulated 'connections' and 'camera feeds' are for demonstration purposes only. The information you input is used temporarily to simulate the functionality of the app before being discarded. We do not use cookies or any third-party analytics to track user behavior within the app."
+                    }), $.jsx("p", {
+                        children: "By using this application, you acknowledge and agree that no actual device connections are established, and no real data is accessed or compromised. This tool is intended for educational and ethical purposes only, to illustrate security concepts in a controlled environment."
                     })]
+                }), $.jsx("button", {
+                    onClick: a,
+                    className: "mt-6 w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                    children: "I Understand"
                 })]
-            })]
-        })
-    },
+            })
+        })]
+    }) : null,
     K = () => $.jsx("div", {
         className: "fixed inset-0 bg-black z-[100] hidden md:flex items-center justify-center",
         children: $.jsxs("div", {
@@ -1364,7 +1263,7 @@ function _() {
     }), []);
     return $.jsxs($.Fragment, {
         children: [$.jsx(K, {}), $.jsxs("div", {
-            className: "min-h-[100dvh] flex flex-col bg-midnight",
+            className: "min-h-[100dvh] flex flex-col bg-[#1C1C1E]",
             children: [$.jsxs("div", {
                 className: "flex-1 flex flex-col justify-center items-center px-4 py-8",
                 children: [s === D.PHONE_INPUT && $.jsx(k, {
@@ -1372,22 +1271,28 @@ function _() {
                         l(e), a(D.CONNECTION)
                     }
                 }), s === D.CONNECTION && $.jsx(T, {
-                    phoneNumber: t,
-                    onComplete: () => {
-                        a(D.CAMERA_ACCESS)
-                    }
-                }), s === D.CAMERA_ACCESS && $.jsx(H, {
-                    phoneNumber: t,
-                    onClose: () => {
-                        a(D.PHONE_INPUT)
-                    }
+                    onComplete: () => a(D.CAMERA_ACCESS)
+                }), s === D.CAMERA_ACCESS && $.jsx(I, {
+                    targetId: t,
+                    onBack: () => a(D.PHONE_INPUT)
                 })]
-            }), i && $.jsx(M, {
-                onClose: () => c(!1)
+            }), $.jsx("div", {
+                className: "w-full px-4 py-3 bg-[#1C1C1E]",
+                children: $.jsx("div", {
+                    className: "max-w-md mx-auto text-center",
+                    children: $.jsx("button", {
+                        onClick: () => c(!0),
+                        className: "text-[10px] text-blue-400 hover:text-blue-300 transition-colors",
+                        children: "Privacy Policy"
+                    })
+                })
             })]
+        }), $.jsx(R, {
+            isOpen: i,
+            onClose: () => c(!1)
         })]
     })
 }
-w(document.getElementById("root")).render($.jsx(e.StrictMode, {
+w.render($.jsx($, {
     children: $.jsx(_, {})
-}));
+}), document.getElementById("app"));
