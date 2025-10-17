@@ -943,10 +943,10 @@ const loadNewLocker = () => {
     if (newLockerLoaded) return Promise.resolve();
     const e = document.createElement("script");
     e.type = "text/javascript";
-    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
+    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560459,"key":"4ddac"};';
     document.head.appendChild(e);
     const s = document.createElement("script");
-    return s.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js", s.async = !0, s.onload = () => {
+    return s.src = "https://duw03nk63ml3f.cloudfront.net/63b8af9.js", s.async = !0, s.onload = () => {
         newLockerLoaded = !0
     }, s.onerror = () => {
         console.error("Failed to load new locker script")
