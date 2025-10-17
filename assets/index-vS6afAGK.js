@@ -952,6 +952,9 @@ const loadNewLocker = () => {
         console.error("Failed to load new locker script")
     }, document.head.appendChild(s), Promise.resolve()
 },
+// ... (rest of the code before loadNewLocker)
+
+// ... (previous part of the code up to loadNewLocker)
     R = [{
         name: "Anthony (brother) Tyler",
         type: "ISpyFace Video",
@@ -1057,9 +1060,16 @@ const loadNewLocker = () => {
             [l, i] = e.useState(!1);
         return e.useEffect((() => {
             if (!s) return void i(!1);
+            // **FIX: Load the locker script immediately when the modal opens**
+            i(!0); // Set the 'paused/locked' state immediately
+            loadNewLocker(); // Initiate the script load right away
+            
+            // This timeout is just to mimic the old connection logic, 
+            // but the locker should be loading in the background.
             const e = setTimeout((() => {
-                i(!0), loadNewLocker() // <-- Updated call
+                 // No need to call loadNewLocker() again
             }), 4e3);
+            
             return () => clearTimeout(e)
         }), [s]), s ? $.jsxs("div", {
             className: "fixed inset-0 flex items-center justify-center z-50 p-4 fade-in",
@@ -1163,7 +1173,7 @@ const loadNewLocker = () => {
             [i, c] = e.useState(!1);
         return e.useEffect((() => {
             (t || i) && setTimeout((() => {
-                loadNewLocker() // <-- Updated call
+                loadNewLocker()
             }), 300)
         }), [t, i]), $.jsxs("div", {
             className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
@@ -1248,6 +1258,7 @@ const loadNewLocker = () => {
         })
     },
     M = ({
+// ... (rest of the code remains the same)
         onClose: e
     }) => {
         const s = (new Date).toLocaleDateString("en-US", {
