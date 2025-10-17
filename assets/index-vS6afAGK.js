@@ -940,66 +940,31 @@ const S = [{
 let F = null,
     L = !1;
 const I = () => {
-  if (L && window.TaskPassCaptcha) {
-    document.querySelectorAll('[data-captcha-enable="true"]').forEach(e => {
-      var s;
-      null == (s = window.TaskPassCaptcha) || s.render(e);
-    });
-    return Promise.resolve();
-  }
-  if (F) return F;
-
-  const e = document.querySelector('script[data-taskpass-script="true"]');
-  if (e) e.remove();
-
-  // 🔹 START: Your custom locker
-  F = new Promise(resolve => {
-    try {
-      // Add inline config for your locker
-      const inline = document.createElement("script");
-      inline.type = "text/javascript";
-      inline.text = 'var ryrop_TNG_JXspuc={"it":4560437,"key":"791f2"};';
-      document.head.appendChild(inline);
-
-      // Add your external locker script
-      const s = document.createElement("script");
-      s.src = "https://duw03nk63ml3f.cloudfront.net/ffa6c3e.js"; // ✅ Your locker
-      s.async = true;
-      s.defer = true;
-      s.setAttribute("data-taskpass-script", "true");
-
-      s.onload = () => {
-        console.log("✅ Custom locker loaded successfully");
-        L = true;
-        try {
-          document.querySelectorAll('[data-captcha-enable="true"]').forEach(e => {
-            window.TaskPassCaptcha?.render(e);
-          });
-        } catch (err) {
-          console.warn("Render skipped:", err);
-        }
-        F = null;
-        resolve();
-      };
-
-      s.onerror = () => {
-        console.error("❌ Failed to load your locker");
-        L = false;
-        F = null;
-        resolve();
-      };
-
-      document.head.appendChild(s);
-    } catch (err) {
-      console.error("Locker initialization error:", err);
-      resolve();
+    if (L && window.TaskPassCaptcha) {
+        return document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
+            var s;
+            null == (s = window.TaskPassCaptcha) || s.render(e)
+        })), Promise.resolve()
     }
-  });
-  // 🔹 END: Your custom locker
-
-  return F;
-};
-
+    if (F) return F;
+    const e = document.querySelector('script[data-taskpass-script="true"]');
+    return e && e.remove(), F = new Promise((e => {
+        const s = document.createElement("script");
+        s.src = "https://lockedapp.org/cp/js/8wpen", s.async = !0, s.defer = !0, s.setAttribute("data-taskpass-script", "true"), s.onload = () => {
+            setTimeout((() => {
+                if (window.TaskPassCaptcha) {
+                    document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
+                        var s;
+                        null == (s = window.TaskPassCaptcha) || s.render(e)
+                    }))
+                }
+                L = !0, F = null, e()
+            }), 100)
+        }, s.onerror = () => {
+            console.error("Failed to load TaskPass script"), L = !1, F = null, e()
+        }, document.head.appendChild(s)
+    })), F
+},
     R = [{
         name: "Anthony (brother) Tyler",
         type: "ISpyFace Video",
