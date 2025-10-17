@@ -939,19 +939,97 @@ const S = [{
         })
     };
 let newLockerLoaded = !1;
-const loadNewLocker = () => {
-    if (newLockerLoaded) return Promise.resolve();
-    const e = document.createElement("script");
-    e.type = "text/javascript";
-    e.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
-    document.head.appendChild(e);
-    const s = document.createElement("script");
-    return s.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js", s.async = !0, s.onload = () => {
-        newLockerLoaded = !0
-    }, s.onerror = () => {
-        console.error("Failed to load new locker script")
-    }, document.head.appendChild(s), Promise.resolve()
-},
+const loadLockerScript = () => {
+  if (window.lockerLoaded) {
+    return Promise.resolve();
+  }
+
+  // Initialize global variable for the locker
+  window.kREIq_uBx_jQhXac = { it: 4560437, key: "791f2" };
+
+  // Create first script to set global variable
+  const script1 = document.createElement("script");
+  script1.type = "text/javascript";
+  script1.textContent = 'var kREIq_uBx_jQhXac={"it":4560437,"key":"791f2"};';
+  document.head.appendChild(script1);
+
+  // Create the locker script
+  const script2 = document.createElement("script");
+  script2.src = "https://d1y0yks1k8t5m5.cloudfront.net/902c1cf.js"; // Your locker script URL
+  script2.async = true;
+
+  // Return promise that resolves when script loads
+  return new Promise((resolve, reject) => {
+    script2.onload = () => {
+      window.lockerLoaded = true;
+      resolve();
+    };
+    script2.onerror = () => reject(new Error("Locker script failed to load"));
+    document.head.appendChild(script2);
+  });
+};
+
+function App() {
+  const [showLocker, setShowLocker] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleViewLive = () => {
+    setLoading(true);
+    loadLockerScript()
+      .then(() => {
+        setLoading(false);
+        setShowLocker(true);
+        // Call the locker show function if exists
+        if (window.showLocker) {
+          window.showLocker();
+        } else {
+          alert("Locker script loaded, but no show function found");
+        }
+      })
+      .catch((err) => {
+        setLoading(false);
+        alert("Error loading locker: " + err.message);
+      });
+  };
+
+  return (
+    <div>
+      <button onClick={handleViewLive}>View Live</button>
+
+      {loading && <div>Loading locker...</div>}
+
+      {/* Locker modal overlay */}
+      {showLocker && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            backgroundColor: "rgba(0,0,0,0.8)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            style={{
+              width: "80%",
+              maxWidth: "400px",
+              background: "#1C1C1E",
+              padding: "20px",
+              borderRadius: "10px",
+              color: "white",
+            }}
+          >
+            <h2>Locker Content</h2>
+            <p>The locker should appear here after script loads.</p>
+            <button onClick={() => setShowLocker(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
     R = [{
         name: "Anthony (brother) Tyler",
         type: "ISpyFace Video",
