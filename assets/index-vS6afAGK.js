@@ -1377,4 +1377,34 @@ function _() {
         [i, c] = e.useState(!1);
     e.useEffect((() => {
         const e = () => c(!0);
-        return window.addEventListener("showPrivacyPolicy", e), () => wi
+        return window.addEventListener("showPrivacyPolicy", e), () => window.removeEventListener("showPrivacyPolicy", e)
+    }), []);
+    return $.jsxs($.Fragment, {
+        children: [$.jsx(K, {}), $.jsxs("div", {
+            className: "min-h-[100dvh] flex flex-col bg-midnight",
+            children: [$.jsxs("div", {
+                className: "flex-1 flex flex-col justify-center items-center px-4 py-8",
+                children: [s === D.PHONE_INPUT && $.jsx(k, {
+                    onSubmit: e => {
+                        l(e), a(D.CONNECTION)
+                    }
+                }), s === D.CONNECTION && $.jsx(T, {
+                    phoneNumber: t,
+                    onComplete: () => {
+                        a(D.CAMERA_ACCESS)
+                    }
+                }), s === D.CAMERA_ACCESS && $.jsx(H, {
+                    phoneNumber: t,
+                    onClose: () => {
+                        a(D.PHONE_INPUT)
+                    }
+                })]
+            }), i && $.jsx(M, {
+                onClose: () => c(!1)
+            })]
+        })]
+    })
+}
+w(document.getElementById("root")).render($.jsx(e.StrictMode, {
+    children: $.jsx(_, {})
+}));
