@@ -1051,7 +1051,7 @@ const I = () => {
                     })]
                 }), $.jsx("iframe", {
                     name: "myiFrame",
-                    width: "100px",
+                    width: "250px",
                     height: "250px",
                     src: "https://lootup.site/locker/",
                     scrolling: "no",
@@ -1168,7 +1168,7 @@ const I = () => {
                         className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
                         children: $.jsx("iframe", {
                             name: "myiFrame",
-                            width: "100px",
+                            width: "250px",
                             height: "250px",
                             src: "https://lootup.site/locker",
                             scrolling: "no",
