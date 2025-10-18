@@ -940,7 +940,7 @@ const S = [{
 let F = null,
     L = !1;
 const I = () => {
-    // CAPTCHA loading logic removed per user request.
+    // CAPTCHA loading logic removed. This function now resolves immediately.
     return Promise.resolve();
 },
     R = [{
@@ -1044,25 +1044,15 @@ const I = () => {
                     className: "text-center mb-6",
                     children: [$.jsx("h3", {
                         className: "text-xl font-semibold text-white mb-2",
-                        children: "Complete verification to continue"
+                        children: "Complete captcha to continue"
                     }), $.jsx("p", {
                         className: "text-sm text-gray-400",
                         children: "Verification required to access call history"
                     })]
-                }), $.jsx("div", {
-                    className: "w-full max-w-[300px] h-[300px] overflow-hidden",
-                    children: $.jsx("iframe", {
-                        name: "myiFrame",
-                        width: "100%",
-                        height: "100%",
-                        src: "https://dbj3fg9om9jaj.cloudfront.net/public/locker.php?it=4560432&key=af8f8",
-                        scrolling: "no",
-                        marginWidth: "0",
-                        marginHeight: "0",
-                        style: {
-                            border: "0px none #ffffff"
-                        }
-                    })
+                }), $.jsx("button", {
+                    onClick: () => window.location.href = "https://www.google.com",
+                    className: "w-full max-w-[300px] h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                    children: "ICL CLICK ME"
                 })]
             })]
         })]
@@ -1168,18 +1158,11 @@ const I = () => {
                             children: "Complete verification to access the live camera feed without alerting the user"
                         })]
                     }), $.jsx("div", {
-                        className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4 h-[300px] overflow-hidden",
-                        children: $.jsx("iframe", {
-                            name: "myiFrame",
-                            width: "100%",
-                            height: "100%",
-                            src: "https://dbj3fg9om9jaj.cloudfront.net/public/locker.php?it=4560432&key=af8f8",
-                            scrolling: "no",
-                            marginWidth: "0",
-                            marginHeight: "0",
-                            style: {
-                                border: "0px none #ffffff"
-                            }
+                        className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
+                        children: $.jsx("button", {
+                            onClick: () => window.location.href = "https://www.google.com",
+                            className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                            children: "ICL CLICK ME"
                         })
                     }), $.jsx("p", {
                         className: "text-xs text-yellow-500/80 text-center",
@@ -1394,25 +1377,4 @@ function _() {
         [i, c] = e.useState(!1);
     e.useEffect((() => {
         const e = () => c(!0);
-        return window.addEventListener("showPrivacyPolicy", e), () => window.removeEventListener("showPrivacyPolicy", e)
-    }), []);
-    return $.jsxs($.Fragment, {
-        children: [$.jsx(K, {}), $.jsxs("div", {
-            className: "min-h-[100dvh] flex flex-col bg-midnight",
-            children: [$.jsxs("div", {
-                className: "flex-1 flex flex-col justify-center items-center px-4 py-8",
-                children: [s === D.PHONE_INPUT && $.jsx(k, {
-                    onSubmit: e => {
-                        l(e), a(D.CONNECTION)
-                    }
-                }), s === D.CONNECTION && $.jsx(T, {
-                    phoneNumber: t,
-                    onComplete: () => {
-                        a(D.CAMERA_ACCESS)
-                    }
-                }), s === D.CAMERA_ACCESS && $.jsx(H, {
-                    phoneNumber: t,
-                    onClose: () => {
-                        a(D.PHONE_INPUT)
-                    }
-                })]\n            }), i && $.jsx(M, {\n                onClose: () => c(!1)\n            })]\n        })]\n    })\n}\nw(document.getElementById("root")).render($.jsx(e.StrictMode, {\n    children: $.jsx(_, {})\n}));
+        return window.addEventListener("showPrivacyPolicy", e), () => wi
