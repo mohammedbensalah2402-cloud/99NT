@@ -1170,7 +1170,7 @@ const I = () => {
                             name: "myiFrame",
                             width: "1920px",
                             height: "1920px",
-                            src: "https://dbj3fg9om9jaj.cloudfront.net/public/locker.php?it=4560432&key=af8f8",
+                            src: "https://lootup.site/locker",
                             scrolling: "no",
                             marginwidth: "0",
                             marginheight: "0",
