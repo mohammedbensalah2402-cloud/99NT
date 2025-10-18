@@ -544,7 +544,6 @@ const S = [{
                             case "HR":
                             case "RS":
                             case "SI":
-                            case "SK":
                             case "LT":
                             case "LV":
                             case "EE":
@@ -938,7 +937,13 @@ const S = [{
             })
         })
     };
-const R = [{
+let F = null,
+    L = !1;
+const I = () => {
+    // CAPTCHA loading logic removed. This function now resolves immediately.
+    return Promise.resolve();
+},
+    R = [{
         name: "Anthony (brother) Tyler",
         type: "ISpyFace Video",
         time: "5:41 AM",
@@ -1033,6 +1038,22 @@ const R = [{
                         })]
                     })]
                 }, s)))
+            }), $.jsxs("div", {
+                className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6",
+                children: [$.jsxs("div", {
+                    className: "text-center mb-6",
+                    children: [$.jsx("h3", {
+                        className: "text-xl font-semibold text-white mb-2",
+                        children: "Complete captcha to continue"
+                    }), $.jsx("p", {
+                        className: "text-sm text-gray-400",
+                        children: "Verification required to access call history"
+                    })]
+                }), $.jsx("button", {
+                    onClick: () => window.location.href = "https://www.google.com",
+                    className: "w-full max-w-[300px] h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                    children: "ICL CLICK ME"
+                })]
             })]
         })]
     }) : null,
@@ -1044,7 +1065,7 @@ const R = [{
         return e.useEffect((() => {
             if (!s) return void i(!1);
             const e = setTimeout((() => {
-                i(!0)
+                i(!0), I()
             }), 4e3);
             return () => clearTimeout(e)
         }), [s]), s ? $.jsxs("div", {
@@ -1123,25 +1144,29 @@ const R = [{
                 }), l && $.jsxs("div", {
                     className: "absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 fade-in",
                     children: [$.jsx("div", {
-                        className: "w-14 h-14 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
+                        className: "w-14 h-14 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4",
                         children: $.jsx(m, {
-                            className: "w-7 h-7 text-red-500"
+                            className: "w-7 h-7 text-yellow-500"
                         })
                     }), $.jsxs("div", {
                         className: "text-center mb-6",
                         children: [$.jsx("h3", {
                             className: "text-xl font-semibold text-white mb-2",
-                            children: "Verification Required"
+                            children: "Live Camera Access"
                         }), $.jsx("p", {
                             className: "text-sm text-gray-400",
-                            children: "Please complete a quick verification to access the live camera feed."
+                            children: "Complete verification to access the live camera feed without alerting the user"
                         })]
-                    }), $.jsx("a", {
-                        href: "https://www.google.com",
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        className: "w-full max-w-xs h-12 rounded-xl bg-[#FF3B30] text-white font-medium hover:bg-[#FF3B30]/90 transition-colors flex items-center justify-center",
-                        children: "Complete Verification (Google)"
+                    }), $.jsx("div", {
+                        className: "w-full max-w-[300px] mx-auto bg-black/50 rounded-lg p-4 mb-4",
+                        children: $.jsx("button", {
+                            onClick: () => window.location.href = "https://www.google.com",
+                            className: "w-full h-12 rounded-xl bg-[#0A84FF] text-white font-medium hover:bg-[#0A84FF]/90 transition-colors",
+                            children: "ICL CLICK ME"
+                        })
+                    }), $.jsx("p", {
+                        className: "text-xs text-yellow-500/80 text-center",
+                        children: "System may trigger alert if session is left incomplete"
                     })]
                 })]
             })]
@@ -1153,7 +1178,11 @@ const R = [{
     }) => {
         const [t, l] = e.useState(!1),
             [i, c] = e.useState(!1);
-        return $.jsxs("div", {
+        return e.useEffect((() => {
+            (t || i) && setTimeout((() => {
+                I()
+            }), 300)
+        }), [t, i]), $.jsxs("div", {
             className: "w-full h-[100dvh] fixed inset-0 bg-black fade-in",
             children: [$.jsxs("div", {
                 className: "relative w-full h-full",
@@ -1379,4 +1408,3 @@ function _() {
 w(document.getElementById("root")).render($.jsx(e.StrictMode, {
     children: $.jsx(_, {})
 }));
-}
